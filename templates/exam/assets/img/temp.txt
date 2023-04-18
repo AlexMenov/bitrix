@@ -1,0 +1,24 @@
+<?foreach($arItem["DISPLAY_PROPERTIES"] as $pid=>$arProperty):
+            $value = $arProperty["VALUE"];?>
+			<small>
+                <?
+                    $idInfoBlock = $arProperty["LINK_ELEMENT_VALUE"][$value]["IBLOCK_ID"];
+                    $res = CIBlockElement::GetProperty($idInfoBlock, $value);
+                    $some = $res->Fetch();
+                    print_r($some["VALUE"]);
+                ?>
+                <br/>
+			<?=$arProperty["NAME"];
+            ?>:&nbsp;
+			<?if(isset($arProperty["LINK_ELEMENT_VALUE"][$value])):
+                $arFilter = array('IBLOCK_ID' => $idInfoBlock,'ID' => $value);
+                $rsItems = CIBlockElement::GetList(array(),$arFilter);
+                $arProperty = $rsItems->GetNext();
+                $arProperty['PREVIEW_PICTURE'] = CFile::GetFileArray($arProperty['PREVIEW_PICTURE']);
+                ?>
+                <p><img height="50" width="50" src="<?=$arProperty['PREVIEW_PICTURE']["SRC"]?>"></p>
+			<?else:?>
+				<?=$arProperty["DISPLAY_VALUE"];?>
+			<?endif?>
+			</small><br />
+		<?endforeach;?>
