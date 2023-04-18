@@ -1,14 +1,19 @@
-<? if (!defined('B_PROLOG_INCLUDED') || B_PROLOG_INCLUDED !== true) die(); ?>
+<?php if (!defined('B_PROLOG_INCLUDED') || B_PROLOG_INCLUDED !== true) die(); ?>
 
-</main>
+</div>
+</div>
 
+<!-- ================================================================================================================================================================= -->
+
+<script src="<?= SITE_TEMPLATE_PATH ?>/assets/js/menu_mobile.js"></script>
+<script src="<?= SITE_TEMPLATE_PATH ?>/assets/js/input_value.js"></script>
 <footer>
     <div class="footer">
 
         <div class="copyright">
             <p>Copyright &copy; 2007-2010</p>
             <p class="text">&copy; <b>"Company"</b>, 2010</p>
-            <img src="<?=SITE_TEMPLATE_PATH?>//assets/img/logo.png" alt="Company logo">
+            <img src="<?= SITE_TEMPLATE_PATH ?>/assets/img/logo.png" alt="Company logo">
         </div>
 
         <div class="bottom_menu">
@@ -23,8 +28,8 @@
         </div>
 
         <div class="statistic">
-            <p>Разработка сайта - <a href="https://itconstruct.ru/" target="_blank" >ITConstruct</a></p>
-            <img src="<?=SITE_TEMPLATE_PATH?>//assets/img/count.png" alt="counter">
+            <p>Разработка сайта - <a href="https://itconstruct.ru/" target="_blank">ITConstruct</a></p>
+            <img src="<?= SITE_TEMPLATE_PATH ?>/assets/img/count.png" alt="counter">
         </div>
 
     </div>

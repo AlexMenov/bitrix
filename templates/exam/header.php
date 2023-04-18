@@ -1,5 +1,7 @@
-<? if (!defined('B_PROLOG_INCLUDED') || B_PROLOG_INCLUDED !== true) die();
+<?php if (!defined('B_PROLOG_INCLUDED') || B_PROLOG_INCLUDED !== true) die();
 
+//подключаем все добавленные стили и скрипты
+$APPLICATION->ShowHead();
 //стили, подключаемые из папки assets
 //use Bitrix\Main\Page\Asset;
 //$asset = Asset::getInstance();
@@ -9,17 +11,16 @@
 <!doctype html>
 <html>
 <head>
+    <meta name="cmsmagazine" content="ce3dd2eb434b96b3a51364fea7d4b7de" />
+    <title><?php $APPLICATION->ShowTitle(); ?></title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.0/jquery.min.js"></script>
 
-    <title><? $APPLICATION->ShowTitle(); ?></title>
-
-    //подключаем все добавленные стили и скрипты
-    <? $APPLICATION->ShowHead(); ?>
 </head>
 <body>
 
-//выводим админ-панель
+<!--выводим админ-панель-->
 <div id="panel">
-    <? $APPLICATION->ShowPanel(); ?>
+    <?php $APPLICATION->ShowPanel(); ?>
 </div>
 
 <!-- HEADER -->
@@ -103,4 +104,7 @@
     </div>
 </noindex>
 
-<main class="main">
+<!-- MAIN BLOCK -->
+<div id="wrapper">
+    <!-- CONTENT -->
+    <div class="content">
